@@ -1,3 +1,24 @@
-<GridLayout class="page page-demo">
-    <Label class="h1" text="Demo Tap Issue"></Label>
+<ActionBar title="Demo Tap Issue">
+</ActionBar>
+
+<GridLayout class="page page-demo" rows="auto auto auto auto *">
+    <Label class="h1" text="Demo" row="0"></Label>
+
+    <tappable-label
+        row="1"
+        text="Tap to demo issue"
+        (tap)="tapDemoIssue('issue')"
+    ></tappable-label>
+    <tappable-label-investigation
+        row="2"
+        text="Tap to demo investigation"
+        (tap)="tapDemoIssue('investigation')"
+    ></tappable-label-investigation>
+    <tappable-label-workaround
+        row="3"
+        text="Tap to demo workaround"
+        (tap)="tapDemoIssue('workaround')"
+    ></tappable-label-workaround>
+
+    <Label textWrap="true" [text]="history" row="4"></Label>
 </GridLayout>
