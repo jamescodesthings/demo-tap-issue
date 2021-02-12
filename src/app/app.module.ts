@@ -9,6 +9,8 @@ import { EventEmitterTestComponent } from './components/event-emitter-test/event
 import { TappableLabelInvestigationComponent } from './components/tappable-label-investigation/tappable-label-investigation.component';
 import { TappableLabelWorkaroundComponent } from './components/tappable-label-workaround/tappable-label-workaround.component';
 import { TappableLabelComponent } from './components/tappable-label/tappable-label.component';
+import { TestListItemComponent } from './components/test-list-item/test-list-item.component';
+import { TestListComponent } from './components/test-list/test-list.component';
 import { Demo2Component } from './demo-2/demo-2.component';
 import { DemoComponent } from './demo/demo.component';
 
@@ -30,6 +32,8 @@ import { DemoComponent } from './demo/demo.component';
         EventEmitterTestComponent,
         ButtonTapTestComponent,
         EventEmitterTestSameNameComponent,
+        TestListComponent,
+        TestListItemComponent,
     ],
     providers: [],
     schemas: [

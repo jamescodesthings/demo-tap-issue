@@ -3,7 +3,10 @@
   </ActionItem>
 </ActionBar>
 
-<GridLayout class="page page-demo-2" rows="auto auto auto auto auto * auto auto auto">
+<GridLayout class="page page-demo-2">
+<!-- (tap)="onStepTap($event)" -->
+<!-- Component with tap event -->
 
+  <test-list [items]="items" (tap)="onTap($event)"></test-list>
 
 </GridLayout>

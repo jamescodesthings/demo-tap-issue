@@ -1,0 +1,8 @@
+<ListView
+    [items]="items"
+    (itemLoading)="onItemLoading($event)"
+>
+  <ng-template let-item="item">
+    <test-list-item [text]="item" (tap)="onTap( item)"></test-list-item>
+  </ng-template>
+</ListView>
