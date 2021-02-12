@@ -1,7 +1,7 @@
 <ActionBar title="Demo Tap Issue">
 </ActionBar>
 
-<GridLayout class="page page-demo" rows="auto auto auto auto *">
+<GridLayout class="page page-demo" rows="auto auto auto auto auto * auto auto auto">
     <Label class="h1" text="Demo" row="0"></Label>
 
     <tappable-label
@@ -9,16 +9,33 @@
         text="Tap to demo issue"
         (tap)="tapDemoIssue('issue')"
     ></tappable-label>
+
+    <!-- I thought maybe this would indicate that the inner (tap) is unnecessary -->
     <tappable-label-investigation
         row="2"
         text="Tap to demo investigation"
         (tap)="tapDemoIssue('investigation')"
     ></tappable-label-investigation>
+
+    <!-- noop works? genuinely no idea -->
     <tappable-label-workaround
         row="3"
         text="Tap to demo workaround"
         (tap)="tapDemoIssue('workaround')"
     ></tappable-label-workaround>
 
-    <Label textWrap="true" [text]="history" row="4"></Label>
+    <button-tap-test row="4" (tap)="tapDemoIssue('button-tap-test')"></button-tap-test>
+
+    <ScrollView #sv orientation="vertical" row="5">
+        <Label textWrap="true" [text]="history"></Label>
+    </ScrollView>
+
+    <!-- This one is really interesting because tap on the button should not be propagated up from the component? -->
+    <event-emitter-test row="6" (emit)="tapDemoIssue('emitter')" (tap)="tapDemoIssue('emitter-toggle')"></event-emitter-test>
+
+    <!-- This one is really interesting because tap on the button should not be propagated up from the component? -->
+    <event-emitter-test-same-name row="7" (tap)="tapDemoIssue('emitter-2')"></event-emitter-test-same-name>
+
+    <Button text="Clear" row="8" (tap)="clear()"></Button>
+
 </GridLayout>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
+import { ScrollView } from '@nativescript/core';
 
 @Component({
   selector: 'page-demo',
@@ -6,13 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./demo.component.scss'],
 })
 export class DemoComponent {
+  ctr = 0;
   history = '';
 
-  constructor() {
+  _scrollView: ScrollView;
+  @ViewChild('sv') set scrollView(er: ElementRef) {
+    this._scrollView = er.nativeElement as ScrollView;
+  }
+
+  constructor(private zone: NgZone) {
     console.log('Constructed Demo Component');
   }
 
   tapDemoIssue(source: string = '') {
-    this.history += `${source} tapped\n`;
+    this.zone.run(() => {
+      this.history += `${++this.ctr}: ${source} tapped\n`;
+      if (this._scrollView) {
+        this._scrollView.scrollToVerticalOffset(this._scrollView?.scrollableHeight, false);
+      }
+    })
+  }
+
+  clear() {
+    this.ctr = 0;
+    this.history = '';
   }
 }

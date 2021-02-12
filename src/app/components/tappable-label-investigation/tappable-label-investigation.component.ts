@@ -2,18 +2,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'tappable-label-investigation',
-  templateUrl: './tappable-label-workaround.component.html'
+  templateUrl: './tappable-label-investigation.component.html'
 })
 export class TappableLabelInvestigationComponent {
   @Input() text: string;
 
-  @Output() tap = new EventEmitter<void>();
+  // @Output() tap = new EventEmitter<void>();
 
   constructor() {
   }
-
-  onTap() {
-    console.log('tappable-label-investigation.onTap()');
-    this.tap.next();
-  }
+  //
+  // onTap() {
+  //   console.log('tappable-label-investigation.onTap()');
+  //   this.tap.next();
+  // }
 }

@@ -3,6 +3,9 @@ import { NativeScriptModule } from "@nativescript/angular";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { ButtonTapTestComponent } from './components/button-tap-test/button-tap-test.component';
+import { EventEmitterTestSameNameComponent } from './components/event-emitter-test-same-name/event-emitter-test-same-name.component';
+import { EventEmitterTestComponent } from './components/event-emitter-test/event-emitter-test.component';
 import { TappableLabelInvestigationComponent } from './components/tappable-label-investigation/tappable-label-investigation.component';
 import { TappableLabelWorkaroundComponent } from './components/tappable-label-workaround/tappable-label-workaround.component';
 import { TappableLabelComponent } from './components/tappable-label/tappable-label.component';
@@ -22,6 +25,9 @@ import { DemoComponent } from './demo/demo.component';
         TappableLabelComponent,
         TappableLabelInvestigationComponent,
         TappableLabelWorkaroundComponent,
+        EventEmitterTestComponent,
+        ButtonTapTestComponent,
+        EventEmitterTestSameNameComponent,
     ],
     providers: [],
     schemas: [

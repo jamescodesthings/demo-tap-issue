@@ -7,13 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TappableLabelWorkaroundComponent {
   @Input() text: string;
 
-  @Output() tap = new EventEmitter<void>();
+  noop = () => {};
 
   constructor() {
-  }
-
-  onTap() {
-    console.log('tappable-label-workaround.onTap()');
-    this.tap.next();
   }
 }
