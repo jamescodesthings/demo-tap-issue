@@ -9,6 +9,7 @@ import { EventEmitterTestComponent } from './components/event-emitter-test/event
 import { TappableLabelInvestigationComponent } from './components/tappable-label-investigation/tappable-label-investigation.component';
 import { TappableLabelWorkaroundComponent } from './components/tappable-label-workaround/tappable-label-workaround.component';
 import { TappableLabelComponent } from './components/tappable-label/tappable-label.component';
+import { Demo2Component } from './demo-2/demo-2.component';
 import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { DemoComponent } from './demo/demo.component';
     declarations: [
         AppComponent,
         DemoComponent,
+        Demo2Component,
         TappableLabelComponent,
         TappableLabelInvestigationComponent,
         TappableLabelWorkaroundComponent,

@@ -1,4 +1,5 @@
 import { Component, ElementRef, NgZone, ViewChild } from '@angular/core';
+import { RouterExtensions } from '@nativescript/angular';
 import { ScrollView } from '@nativescript/core';
 
 @Component({
@@ -15,7 +16,7 @@ export class DemoComponent {
     this._scrollView = er.nativeElement as ScrollView;
   }
 
-  constructor(private zone: NgZone) {
+  constructor(private zone: NgZone, private router: RouterExtensions) {
     console.log('Constructed Demo Component');
   }
 
@@ -31,5 +32,9 @@ export class DemoComponent {
   clear() {
     this.ctr = 0;
     this.history = '';
+  }
+
+  toDemo2() {
+    return this.router.navigate(['/demo-2']);
   }
 }
